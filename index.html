@@ -42,9 +42,11 @@
         }
         
         .logo {
-            height: 50px;
-            width: auto;
-            border-radius: 10px;
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #FF6B35;
         }
         
         .header h1 {
@@ -573,9 +575,9 @@
         <div class="container">
             <div class="row align-items-center py-2">
                 <div class="col-12 text-center">
-                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=300&fit=crop&crop=center" 
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiDHjtaNksdgVKeKKXCMpVMu4fLMVHhPJ1xeCB-V3IogklwaTiD8RcH4-TdHzVabnBfW8qODNkVURXm56dbGy2Zw3WHJS5ytH0CE854SJX2U2N96nEGwZanhOMgZxJ_VNarD65gr2UqMf-eU9hz0Tm5d6xd_76YkKpnrOQjgIdsrMQFQwB-KZ899gZ8T9Ph/s325/1000274798.jpg" 
                          alt="Logo Geprek Orange" class="logo">
-                    <h1> GEPREK ORANGE </h1>
+                    <h1>🍊 GEPREK ORANGE 🍊</h1>
                     <p>Geprek Gurih, Pedasnya Bikin Nagih!</p>
                 </div>
             </div>
@@ -1007,6 +1009,9 @@
         let currentItem = null;
         let currentQuantity = 1;
 
+        // Nomor WhatsApp penjual - dapat diubah sesuai kebutuhan
+        const SELLER_WHATSAPP = '082145545119';
+
         // Fungsi untuk format rupiah
         function formatRupiah(amount) {
             return new Intl.NumberFormat('id-ID').format(amount);
@@ -1294,7 +1299,7 @@
                 
                 // Encode pesan untuk URL WhatsApp
                 const encodedMessage = encodeURIComponent(message);
-                const whatsappURL = `https://wa.me/62${whatsappNumber.replace(/^0/, '')}?text=${encodedMessage}`;
+                const whatsappURL = `https://wa.me/62${SELLER_WHATSAPP.replace(/^0/, '')}?text=${encodedMessage}`;
                 
                 // Buka WhatsApp
                 window.open(whatsappURL, '_blank');
@@ -1312,4 +1317,4 @@
         });
     </script>
 </body>
-                    </html>
+</html>

@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayam Geprek Mantul - UMKM Kuliner Terbaik</title>
+    
+    <!-- Bootstrap CSS untuk desain responsif -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts untuk tipografi yang menarik -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Kustom untuk Website Ayam Geprek Mantul - Responsive Mobile First */
+        
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 80px; /* Space untuk bubble cart */
+        }
+        
+        /* Header Styling - Optimized untuk mobile */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+            border-radius: 10px;
+        }
+        
+        .header h1 {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 700;
+            margin: 8px 0 4px 0;
+        }
+        
+        .header p {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 0;
+        }
+        
+        /* Container utama */
+        .main-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            margin: 15px;
+            padding: 20px;
+        }
+        
+        /* Tombol filter kategori - Mobile optimized */
+        .filter-buttons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .filter-btn {
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border: none;
+            color: white;
+            padding: 12px 15px;
+            border-radius: 15px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            text-align: center;
+        }
+        
+        .filter-btn:hover, .filter-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #FF8E53, #FF6B6B);
+        }
+        
+        .filter-btn.active {
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+        }
+        
+        /* Grid menu responsif - Mobile first */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        /* Kartu menu - Simplified untuk mobile */
+        .menu-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .menu-image {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+        }
+        
+        .menu-info {
+            padding: 12px;
+        }
+        
+        .menu-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #333;
+            margin-bottom: 4px;
+            line-height: 1.2;
+        }
+        
+        .menu-description {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        
+        .menu-price {
+            color: #FF6B6B;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+        
+        .add-to-cart-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            border: none;
+            color: white;
+            padding: 8px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        
+        .add-to-cart-btn:hover {
+            background: linear-gradient(45deg, #44A08D, #4ECDC4);
+            transform: translateY(-1px);
+        }
+        
+        /* Bubble keranjang mengambang */
+        .floating-cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1050;
+            border: none;
+        }
+        
+        .floating-cart:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+        }
+        
+        .floating-cart i {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #FFE66D;
+            color: #333;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border: 2px solid white;
+        }
+        
+        /* Modal dan halaman full screen */
+        .page-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            z-index: 2000;
+            overflow-y: auto;
+            display: none;
+        }
+        
+        .page-overlay.show {
+            display: block;
+        }
+        
+        .page-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+            z-index: 2001;
+        }
+        
+        .page-header .btn-back {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+        
+        .page-content {
+            padding: 20px;
+        }
+        
+        /* Customization modal untuk item */
+        .customization-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .customization-modal.show {
+            display: flex;
+        }
+        
+        .customization-content {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .customization-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #666;
+            cursor: pointer;
+        }
+        
+        /* Form controls untuk customization */
+        .control-group {
+            margin-bottom: 15px;
+        }
+        
+        .control-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .custom-select {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            background: white;
+        }
+        
+        /* Kontrol jumlah pesanan */
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        
+        .quantity-btn {
+            background: #FF6B6B;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+        
+        .quantity-btn:hover {
+            background: #FF5252;
+            transform: scale(1.1);
+        }
+        
+        .quantity-display {
+            font-weight: 600;
+            font-size: 1.1rem;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        /* Cart item styling */
+        .cart-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+        }
+        
+        .cart-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .cart-item-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: #333;
+        }
+        
+        .cart-item-price {
+            font-weight: 700;
+            color: #FF6B6B;
+            font-size: 1rem;
+        }
+        
+        .cart-item-details {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .cart-item-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .remove-item-btn {
+            background: #FF6B6B;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            transition: all 0.2s ease;
+        }
+        
+        .remove-item-btn:hover {
+            background: #FF5252;
+        }
+        
+        /* Total dan checkout */
+        .cart-total {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            border: none;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .checkout-btn:hover {
+            background: linear-gradient(45deg, #FF8E53, #FF6B6B);
+            transform: translateY(-2px);
+        }
+        
+        .checkout-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        /* Form checkout */
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+        }
+        
+        .form-control:focus {
+            border-color: #4ECDC4;
+            box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+        }
+        
+        /* Desktop responsive */
+        @media (min-width: 768px) {
+            .main-container {
+                margin: 20px auto;
+                max-width: 1200px;
+                padding: 30px;
+            }
+            
+            .menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .menu-image {
+                height: 180px;
+            }
+            
+            .menu-info {
+                padding: 20px;
+            }
+            
+            .menu-title {
+                font-size: 1.1rem;
+            }
+            
+            .menu-description {
+                font-size: 0.9rem;
+            }
+            
+            .filter-buttons {
+                display: flex;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .filter-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .header p {
+                font-size: 1rem;
+            }
+            
+            .logo {
+                height: 60px;
+            }
+        }
+        
+        @media (min-width: 1200px) {
+            .menu-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* Animasi */
+        .menu-card {
+            animation: fadeInUp 0.5s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Hidden class untuk filter */
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Empty state */
+        .empty-cart {
+            text-align: center;
+            padding: 40px 20px;
+            color: #666;
+        }
+        
+        .empty-cart i {
+            font-size: 4rem;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header dengan logo -->
+    <header class="header">
+        <div class="container">
+            <div class="row align-items-center py-2">
+                <div class="col-12 text-center">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=300&fit=crop&crop=center" 
+                         alt="Logo Ayam Geprek Mantul" class="logo">
+                    <h1>🔥 AYAM GEPREK MANTUL 🔥</h1>
+                    <p>Ayam Geprek Terenak Se-Indonesia!</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Container utama -->
+    <div class="container-fluid">
+        <div class="main-container">
+            <!-- Tombol filter kategori -->
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-category="semua">
+                    <i class="fas fa-th-large me-2"></i>Semua Menu
+                </button>
+                <button class="btn filter-btn" data-category="paket">
+                    <i class="fas fa-box me-2"></i>Paket
+                </button>
+                <button class="btn filter-btn" data-category="makanan">
+                    <i class="fas fa-drumstick-bite me-2"></i>Makanan
+                </button>
+                <button class="btn filter-btn" data-category="minuman">
+                    <i class="fas fa-glass-whiskey me-2"></i>Minuman
+                </button>
+            </div>
+
+            <!-- Grid menu makanan -->
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bubble keranjang mengambang -->
+    <button class="floating-cart" id="floatingCart" onclick="showCartPage()">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-badge" id="cartBadge">0</span>
+    </button>
+
+    <!-- Modal customization untuk item -->
+    <div class="customization-modal" id="customizationModal">
+        <div class="customization-content">
+            <div class="customization-header">
+                <h5 id="customizationTitle">Kustomisasi Pesanan</h5>
+                <button class="close-modal" onclick="closeCustomizationModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Level Pedas:</label>
+                <select class="custom-select" id="spiceLevel">
+                    <option value="Tidak Pedas">Tidak Pedas</option>
+                    <option value="Level 1">Level 1 (Ringan)</option>
+                    <option value="Level 2" selected>Level 2 (Sedang)</option>
+                    <option value="Level 3">Level 3 (Pedas)</option>
+                    <option value="Level 4">Level 4 (Sangat Pedas)</option>
+                    <option value="Level 5">Level 5 (Mampus)</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label class="control-label">Jenis Sambal:</label>
+                <select class="custom-select" id="sambalType">
+                    <option value="Sambal Korek">Sambal Korek</option>
+                    <option value="Sambal Bawang" selected>Sambal Bawang</option>
+                    <option value="Sambal Terasi">Sambal Terasi</option>
+                    <option value="Sambal Matah">Sambal Matah</option>
+                </select>
+            </div>
+            
+            <div class="control-group" id="chickenPartGroup" style="display: none;">
+                <label class="control-label">Bagian Ayam:</label>
+                <select class="custom-select" id="chickenPart">
+                    <option value="Dada">Dada</option>
+                    <option value="Paha">Paha</option>
+                    <option value="Sayap">Sayap</option>
+                    <option value="Random" selected>Random</option>
+                </select>
+            </div>
+            
+            <div class="quantity-control">
+                <span>Jumlah:</span>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="quantity-btn" onclick="decreaseQuantity()">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="quantity-display" id="itemQuantity">1</span>
+                    <button class="quantity-btn" onclick="increaseQuantity()">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <button class="btn add-to-cart-btn" onclick="addToCartWithCustomization()">
+                <i class="fas fa-cart-plus me-2"></i>Tambah ke Keranjang
+            </button>
+        </div>
+    </div>
+
+    <!-- Halaman Keranjang -->
+    <div class="page-overlay" id="cartPage">
+        <div class="page-header">
+            <button class="btn-back" onclick="hideCartPage()">
+                <i class="fas fa-arrow-left me-2"></i>Kembali
+            </button>
+            <span>Keranjang Belanja</span>
+        </div>
+        <div class="page-content">
+            <div id="cartItems">
+                <!-- Item keranjang akan diisi oleh JavaScript -->
+            </div>
+            <div class="empty-cart" id="emptyCart" style="display: none;">
+                <i class="fas fa-shopping-cart"></i>
+                <h5>Keranjang Kosong</h5>
+                <p>Silakan tambahkan menu favorit Anda</p>
+            </div>
+            <div class="cart-total" id="cartTotal" style="display: none;">
+                <div class="total-amount">
+                    Total: Rp <span id="totalAmount">0</span>
+                </div>
+                <button class="btn checkout-btn" onclick="showCheckoutPage()">
+                    <i class="fas fa-credit-card me-2"></i>Lanjut ke Pembayaran
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Checkout -->
+    <div class="page-overlay" id="checkoutPage">
+        <div class="page-header">
+            <button class="btn-back" onclick="hideCheckoutPage()">
+                <i class="fas fa-arrow-left me-2"></i>Kembali
+            </button>
+            <span>Form Pemesanan</span>
+        </div>
+        <div class="page-content">
+            <form id="orderForm">
+                <div class="mb-3">
+                    <label for="customerName" class="form-label">
+                        <i class="fas fa-user me-2"></i>Nama Lengkap
+                    </label>
+                    <input type="text" class="form-control" id="customerName" 
+                           placeholder="Masukkan nama lengkap Anda" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="whatsappNumber" class="form-label">
+                        <i class="fab fa-whatsapp me-2"></i>Nomor WhatsApp
+                    </label>
+                    <input type="tel" class="form-control" id="whatsappNumber" 
+                           placeholder="Contoh: 08123456789" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="pickupTime" class="form-label">
+                        <i class="fas fa-clock me-2"></i>Jam Pengambilan
+                    </label>
+                    <input type="time" class="form-control" id="pickupTime" required>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="orderNotes" class="form-label">
+                        <i class="fas fa-sticky-note me-2"></i>Catatan Pesanan (Opsional)
+                    </label>
+                    <textarea class="form-control" id="orderNotes" rows="3" 
+                              placeholder="Tambahkan catatan khusus untuk pesanan Anda..."></textarea>
+                </div>
+                
+                <div class="cart-total">
+                    <div class="total-amount">
+                        Total: Rp <span id="checkoutTotal">0</span>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn checkout-btn">
+                    <i class="fab fa-whatsapp me-2"></i>Kirim Pesanan ke WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS untuk interaktivitas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Data menu dalam format array objek JavaScript - mudah diperluas
+        const menuData = [
+            // Kategori Paket
+            {
+                id: 1,
+                nama: "Paket Geprek Original",
+                kategori: "paket",
+                harga: 25000,
+                gambar: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek crispy + nasi + lalapan + kerupuk"
+            },
+            {
+                id: 2,
+                nama: "Paket Geprek Keju",
+                kategori: "paket",
+                harga: 30000,
+                gambar: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek + keju mozarella + nasi + lalapan"
+            },
+            {
+                id: 3,
+                nama: "Paket Geprek Jumbo",
+                kategori: "paket",
+                harga: 35000,
+                gambar: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek jumbo + nasi + lalapan + kerupuk + es teh"
+            },
+            
+            // Kategori Makanan
+            {
+                id: 4,
+                nama: "Ayam Geprek Original",
+                kategori: "makanan",
+                harga: 20000,
+                gambar: "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek crispy dengan sambal pilihan"
+            },
+            {
+                id: 5,
+                nama: "Ayam Geprek Keju",
+                kategori: "makanan",
+                harga: 25000,
+                gambar: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek dengan taburan keju mozarella"
+            },
+            {
+                id: 6,
+                nama: "Nasi Putih",
+                kategori: "makanan",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Nasi putih hangat"
+            },
+            {
+                id: 7,
+                nama: "Lalapan",
+                kategori: "makanan",
+                harga: 3000,
+                gambar: "https://images.unsplash.com/photo-1594343431512-9fa6749bf90f?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Lalapan segar (timun, tomat, daun kemangi)"
+            },
+            
+            // Kategori Minuman
+            {
+                id: 8,
+                nama: "Es Teh Manis",
+                kategori: "minuman",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Es teh manis segar"
+            },
+            {
+                id: 9,
+                nama: "Es Jeruk",
+                kategori: "minuman",
+                harga: 8000,
+                gambar: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Es jeruk peras segar"
+            },
+            {
+                id: 10,
+                nama: "Air Mineral",
+                kategori: "minuman",
+                harga: 3000,
+                gambar: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Air mineral botol 600ml"
+            },
+            {
+                id: 11,
+                nama: "Es Kelapa Muda",
+                kategori: "minuman",
+                harga: 12000,
+                gambar: "https://images.unsplash.com/photo-1605693104473-d0c01f7d3b51?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Es kelapa muda segar dengan daging kelapa"
+            }
+        ];
+
+        // Variabel global untuk keranjang dan customization
+        let cart = JSON.parse(localStorage.getItem('ayamGeprekCart')) || [];
+        let currentItem = null;
+        let currentQuantity = 1;
+
+        // Fungsi untuk format rupiah
+        function formatRupiah(amount) {
+            return new Intl.NumberFormat('id-ID').format(amount);
+        }
+
+        // Fungsi untuk render menu
+        function renderMenu(category = 'semua') {
+            const menuGrid = document.getElementById('menuGrid');
+            const filteredMenu = category === 'semua' ? menuData : menuData.filter(item => item.kategori === category);
+            
+            menuGrid.innerHTML = filteredMenu.map(item => `
+                <div class="menu-card" data-category="${item.kategori}">
+                    <img src="${item.gambar}" alt="${item.nama}" class="menu-image">
+                    <div class="menu-info">
+                        <div class="menu-title">${item.nama}</div>
+                        <div class="menu-description">${item.deskripsi}</div>
+                        <div class="menu-price">Rp ${formatRupiah(item.harga)}</div>
+                        <button class="btn add-to-cart-btn" onclick="showCustomizationModal(${item.id})">
+                            <i class="fas fa-cart-plus me-2"></i>Masukan Keranjang
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Fungsi untuk menampilkan modal customization
+        function showCustomizationModal(itemId) {
+            currentItem = menuData.find(item => item.id === itemId);
+            currentQuantity = 1;
+            
+            document.getElementById('customizationTitle').textContent = currentItem.nama;
+            document.getElementById('itemQuantity').textContent = currentQuantity;
+            
+            // Tampilkan/sembunyikan kontrol bagian ayam hanya untuk menu ayam
+            const chickenPartGroup = document.getElementById('chickenPartGroup');
+            if (currentItem.nama.toLowerCase().includes('ayam') && currentItem.kategori !== 'minuman') {
+                chickenPartGroup.style.display = 'block';
+            } else {
+                chickenPartGroup.style.display = 'none';
+            }
+            
+            document.getElementById('customizationModal').classList.add('show');
+        }
+
+        // Fungsi untuk menutup modal customization
+        function closeCustomizationModal() {
+            document.getElementById('customizationModal').classList.remove('show');
+            currentItem = null;
+            currentQuantity = 1;
+        }
+
+        // Fungsi untuk menambah/mengurangi quantity
+        function increaseQuantity() {
+            currentQuantity++;
+            document.getElementById('itemQuantity').textContent = currentQuantity;
+        }
+
+        function decreaseQuantity() {
+            if (currentQuantity > 1) {
+                currentQuantity--;
+                document.getElementById('itemQuantity').textContent = currentQuantity;
+            }
+        }
+
+        // Fungsi untuk menambah ke keranjang dengan customization
+        function addToCartWithCustomization() {
+            const spiceLevel = document.getElementById('spiceLevel').value;
+            const sambalType = document.getElementById('sambalType').value;
+            const chickenPart = document.getElementById('chickenPart').value;
+            
+            const cartItem = {
+                id: Date.now(), // ID unik untuk setiap item
+                menuId: currentItem.id,
+                nama: currentItem.nama,
+                harga: currentItem.harga,
+                quantity: currentQuantity,
+                spiceLevel: spiceLevel,
+                sambalType: sambalType,
+                chickenPart: currentItem.nama.toLowerCase().includes('ayam') && currentItem.kategori !== 'minuman' ? chickenPart : null
+            };
+
+            cart.push(cartItem);
+            updateCartStorage();
+            updateCartBadge();
+            closeCustomizationModal();
+            
+            // Show notification
+            showNotification('Item berhasil ditambahkan ke keranjang!');
+        }
+
+        // Fungsi untuk update storage keranjang
+        function updateCartStorage() {
+            localStorage.setItem('ayamGeprekCart', JSON.stringify(cart));
+        }
+
+        // Fungsi untuk update badge keranjang
+        function updateCartBadge() {
+            const badge = document.getElementById('cartBadge');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            badge.textContent = totalItems;
+            badge.style.display = totalItems > 0 ? 'flex' : 'none';
+        }
+
+        // Fungsi untuk menampilkan halaman keranjang
+        function showCartPage() {
+            renderCartItems();
+            document.getElementById('cartPage').classList.add('show');
+        }
+
+        // Fungsi untuk menyembunyikan halaman keranjang
+        function hideCartPage() {
+            document.getElementById('cartPage').classList.remove('show');
+        }
+
+        // Fungsi untuk render item keranjang
+        function renderCartItems() {
+            const cartItemsContainer = document.getElementById('cartItems');
+            const emptyCart = document.getElementById('emptyCart');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '';
+                emptyCart.style.display = 'block';
+                cartTotal.style.display = 'none';
+                return;
+            }
+            
+            emptyCart.style.display = 'none';
+            cartTotal.style.display = 'block';
+            
+            cartItemsContainer.innerHTML = cart.map(item => {
+                const details = [];
+                if (item.spiceLevel) details.push(`Level: ${item.spiceLevel}`);
+                if (item.sambalType) details.push(`Sambal: ${item.sambalType}`);
+                if (item.chickenPart) details.push(`Bagian: ${item.chickenPart}`);
+                
+                return `
+                    <div class="cart-item">
+                        <div class="cart-item-header">
+                            <div class="cart-item-title">${item.nama}</div>
+                            <div class="cart-item-price">Rp ${formatRupiah(item.harga * item.quantity)}</div>
+                        </div>
+                        <div class="cart-item-details">${details.join(' • ')}</div>
+                        <div class="cart-item-controls">
+                            <div class="quantity-control" style="flex: 1; margin-right: 15px;">
+                                <button class="quantity-btn" onclick="updateCartItemQuantity(${item.id}, -1)">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="quantity-display">${item.quantity}</span>
+                                <button class="quantity-btn" onclick="updateCartItemQuantity(${item.id}, 1)">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <button class="remove-item-btn" onclick="removeCartItem(${item.id})">
+                                <i class="fas fa-trash me-1"></i>Hapus
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            updateCartTotal();
+        }
+
+        // Fungsi untuk update quantity item di keranjang
+        function updateCartItemQuantity(itemId, change) {
+            const item = cart.find(item => item.id === itemId);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeCartItem(itemId);
+                } else {
+                    updateCartStorage();
+                    updateCartBadge();
+                    renderCartItems();
+                }
+            }
+        }
+
+        // Fungsi untuk hapus item dari keranjang
+        function removeCartItem(itemId) {
+            cart = cart.filter(item => item.id !== itemId);
+            updateCartStorage();
+            updateCartBadge();
+            renderCartItems();
+        }
+
+        // Fungsi untuk update total keranjang
+        function updateCartTotal() {
+            const total = cart.reduce((sum, item) => sum + (item.harga * item.quantity), 0);
+            document.getElementById('totalAmount').textContent = formatRupiah(total);
+            document.getElementById('checkoutTotal').textContent = formatRupiah(total);
+        }
+
+        // Fungsi untuk menampilkan halaman checkout
+        function showCheckoutPage() {
+            updateCartTotal();
+            document.getElementById('checkoutPage').classList.add('show');
+        }
+
+        // Fungsi untuk menyembunyikan halaman checkout
+        function hideCheckoutPage() {
+            document.getElementById('checkoutPage').classList.remove('show');
+        }
+
+        // Fungsi untuk menampilkan notifikasi
+        function showNotification(message) {
+            // Simple alert for now, bisa diganti dengan toast notification yang lebih cantik
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #4ECDC4;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 10px;
+                z-index: 4000;
+                font-weight: 500;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Event listener untuk filter kategori
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render menu awal
+            renderMenu();
+            updateCartBadge();
+            
+            // Event listener untuk tombol filter
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class dari semua tombol
+                    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    // Add active class ke tombol yang diklik
+                    this.classList.add('active');
+                    // Render menu sesuai kategori
+                    renderMenu(this.dataset.category);
+                });
+            });
+            
+            // Event listener untuk form checkout
+            document.getElementById('orderForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const customerName = document.getElementById('customerName').value;
+                const whatsappNumber = document.getElementById('whatsappNumber').value;
+                const pickupTime = document.getElementById('pickupTime').value;
+                const orderNotes = document.getElementById('orderNotes').value;
+                
+                // Generate pesan WhatsApp
+                let message = `*PESANAN AYAM GEPREK MANTUL*\n\n`;
+                message += `*Nama:* ${customerName}\n`;
+                message += `*Jam Pengambilan:* ${pickupTime}\n\n`;
+                message += `*DETAIL PESANAN:*\n`;
+                
+                cart.forEach((item, index) => {
+                    message += `${index + 1}. ${item.nama} (${item.quantity}x)\n`;
+                    if (item.spiceLevel) message += `   Level: ${item.spiceLevel}\n`;
+                    if (item.sambalType) message += `   Sambal: ${item.sambalType}\n`;
+                    if (item.chickenPart) message += `   Bagian: ${item.chickenPart}\n`;
+                    message += `   Harga: Rp ${formatRupiah(item.harga * item.quantity)}\n\n`;
+                });
+                
+                const total = cart.reduce((sum, item) => sum + (item.harga * item.quantity), 0);
+                message += `*TOTAL HARGA: Rp ${formatRupiah(total)}*\n\n`;
+                
+                if (orderNotes) {
+                    message += `*Catatan:* ${orderNotes}\n\n`;
+                }
+                
+                message += `Terima kasih telah memesan di Ayam Geprek Mantul! 🔥`;
+                
+                // Encode pesan untuk URL WhatsApp
+                const encodedMessage = encodeURIComponent(message);
+                const whatsappURL = `https://wa.me/62${whatsappNumber.replace(/^0/, '')}?text=${encodedMessage}`;
+                
+                // Buka WhatsApp
+                window.open(whatsappURL, '_blank');
+                
+                // Reset form dan keranjang
+                cart = [];
+                updateCartStorage();
+                updateCartBadge();
+                hideCheckoutPage();
+                hideCartPage();
+                this.reset();
+                
+                showNotification('Pesanan berhasil dikirim ke WhatsApp!');
+            });
+        });
+    </script>
+</body>
+</html>

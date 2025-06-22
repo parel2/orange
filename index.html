@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayam Geprek Mantul - UMKM Kuliner Terbaik</title>
+    <title>Geprek Orange - UMKM Kuliner Terbaik</title>
     
     <!-- Bootstrap CSS untuk desain responsif -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* CSS Kustom untuk Website Ayam Geprek Mantul - Responsive Mobile First */
+        /* CSS Kustom untuk Website Geprek Orange - Responsive Mobile First */
         
         * {
             font-family: 'Poppins', sans-serif;
@@ -25,7 +25,7 @@
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #FF8C42 0%, #FF6B35 100%);
             min-height: 100vh;
             padding-bottom: 80px; /* Space untuk bubble cart */
         }
@@ -49,7 +49,7 @@
         
         .header h1 {
             font-size: 1.5rem;
-            color: #333;
+            color: #FF6B35;
             font-weight: 700;
             margin: 8px 0 4px 0;
         }
@@ -79,7 +79,7 @@
         }
         
         .filter-btn {
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            background: linear-gradient(45deg, #FF8C42, #FF6B35);
             border: none;
             color: white;
             padding: 12px 15px;
@@ -87,19 +87,19 @@
             font-weight: 500;
             font-size: 0.9rem;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
             text-align: center;
         }
         
         .filter-btn:hover, .filter-btn:active {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
-            background: linear-gradient(45deg, #FF8E53, #FF6B6B);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+            background: linear-gradient(45deg, #FF6B35, #FF8C42);
         }
         
         .filter-btn.active {
-            background: linear-gradient(45deg, #4ECDC4, #44A08D);
-            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.4);
+            background: linear-gradient(45deg, #FF6B35, #E55A4F);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.5);
         }
         
         /* Grid menu responsif - Mobile first */
@@ -151,7 +151,7 @@
         }
         
         .menu-price {
-            color: #FF6B6B;
+            color: #FF6B35;
             font-weight: 700;
             font-size: 1rem;
             margin-bottom: 10px;
@@ -159,7 +159,7 @@
         
         .add-to-cart-btn {
             width: 100%;
-            background: linear-gradient(45deg, #4ECDC4, #44A08D);
+            background: linear-gradient(45deg, #FF8C42, #FF6B35);
             border: none;
             color: white;
             padding: 8px;
@@ -170,7 +170,7 @@
         }
         
         .add-to-cart-btn:hover {
-            background: linear-gradient(45deg, #44A08D, #4ECDC4);
+            background: linear-gradient(45deg, #FF6B35, #FF8C42);
             transform: translateY(-1px);
         }
         
@@ -181,12 +181,12 @@
             right: 20px;
             width: 60px;
             height: 60px;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            background: linear-gradient(45deg, #FF8C42, #FF6B35);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
             cursor: pointer;
             transition: all 0.3s ease;
             z-index: 1050;
@@ -195,7 +195,7 @@
         
         .floating-cart:hover {
             transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.5);
         }
         
         .floating-cart i {
@@ -238,7 +238,7 @@
         }
         
         .page-header {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #FF8C42, #FF6B35);
             color: white;
             padding: 15px;
             position: sticky;
@@ -339,7 +339,7 @@
         }
         
         .quantity-btn {
-            background: #FF6B6B;
+            background: #FF6B35;
             color: white;
             border: none;
             width: 35px;
@@ -353,7 +353,7 @@
         }
         
         .quantity-btn:hover {
-            background: #FF5252;
+            background: #E55A4F;
             transform: scale(1.1);
         }
         
@@ -388,7 +388,7 @@
         
         .cart-item-price {
             font-weight: 700;
-            color: #FF6B6B;
+            color: #FF6B35;
             font-size: 1rem;
         }
         
@@ -406,7 +406,7 @@
         }
         
         .remove-item-btn {
-            background: #FF6B6B;
+            background: #FF6B35;
             color: white;
             border: none;
             padding: 6px 12px;
@@ -416,12 +416,12 @@
         }
         
         .remove-item-btn:hover {
-            background: #FF5252;
+            background: #E55A4F;
         }
         
         /* Total dan checkout */
         .cart-total {
-            background: linear-gradient(45deg, #667eea, #764ba2);
+            background: linear-gradient(45deg, #FF8C42, #FF6B35);
             color: white;
             border-radius: 10px;
             padding: 20px;
@@ -437,7 +437,7 @@
         
         .checkout-btn {
             width: 100%;
-            background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+            background: linear-gradient(45deg, #FF6B35, #E55A4F);
             border: none;
             color: white;
             padding: 15px;
@@ -449,7 +449,7 @@
         }
         
         .checkout-btn:hover {
-            background: linear-gradient(45deg, #FF8E53, #FF6B6B);
+            background: linear-gradient(45deg, #E55A4F, #FF6B35);
             transform: translateY(-2px);
         }
         
@@ -469,8 +469,8 @@
         }
         
         .form-control:focus {
-            border-color: #4ECDC4;
-            box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+            border-color: #FF8C42;
+            box-shadow: 0 0 0 0.2rem rgba(255, 140, 66, 0.25);
         }
         
         /* Desktop responsive */
@@ -574,9 +574,9 @@
             <div class="row align-items-center py-2">
                 <div class="col-12 text-center">
                     <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=500&h=300&fit=crop&crop=center" 
-                         alt="Logo Ayam Geprek Mantul" class="logo">
-                    <h1>🔥 AYAM GEPREK MANTUL 🔥</h1>
-                    <p>Ayam Geprek Terenak Se-Indonesia!</p>
+                         alt="Logo Geprek Orange" class="logo">
+                    <h1> GEPREK ORANGE </h1>
+                    <p>Geprek Gurih, Pedasnya Bikin Nagih!</p>
                 </div>
             </div>
         </div>
@@ -590,11 +590,14 @@
                 <button class="btn filter-btn active" data-category="semua">
                     <i class="fas fa-th-large me-2"></i>Semua Menu
                 </button>
-                <button class="btn filter-btn" data-category="paket">
-                    <i class="fas fa-box me-2"></i>Paket
+                <button class="btn filter-btn" data-category="paket_premium">
+                    <i class="fas fa-crown me-2"></i>Paket Premium
                 </button>
-                <button class="btn filter-btn" data-category="makanan">
-                    <i class="fas fa-drumstick-bite me-2"></i>Makanan
+                <button class="btn filter-btn" data-category="paket_ekonomis">
+                    <i class="fas fa-box me-2"></i>Paket Ekonomis
+                </button>
+                <button class="btn filter-btn" data-category="cemilan">
+                    <i class="fas fa-cookie-bite me-2"></i>Cemilan
                 </button>
                 <button class="btn filter-btn" data-category="minuman">
                     <i class="fas fa-glass-whiskey me-2"></i>Minuman
@@ -624,25 +627,14 @@
                 </button>
             </div>
             
-            <div class="control-group">
-                <label class="control-label">Level Pedas:</label>
-                <select class="custom-select" id="spiceLevel">
-                    <option value="Tidak Pedas">Tidak Pedas</option>
-                    <option value="Level 1">Level 1 (Ringan)</option>
-                    <option value="Level 2" selected>Level 2 (Sedang)</option>
-                    <option value="Level 3">Level 3 (Pedas)</option>
-                    <option value="Level 4">Level 4 (Sangat Pedas)</option>
-                    <option value="Level 5">Level 5 (Mampus)</option>
-                </select>
-            </div>
-            
-            <div class="control-group">
-                <label class="control-label">Jenis Sambal:</label>
+            <div class="control-group" id="sambalGroup">
+                <label class="control-label">Pilihan Sambal:</label>
                 <select class="custom-select" id="sambalType">
-                    <option value="Sambal Korek">Sambal Korek</option>
-                    <option value="Sambal Bawang" selected>Sambal Bawang</option>
-                    <option value="Sambal Terasi">Sambal Terasi</option>
-                    <option value="Sambal Matah">Sambal Matah</option>
+                    <option value="Sambal Original">Sambal Original</option>
+                    <option value="Sambal Pedas Manis">Sambal Pedas Manis</option>
+                    <option value="Sambal Hijau">Sambal Hijau</option>
+                    <option value="Sambal Matah Bali">Sambal Matah Bali</option>
+                    <option value="Saos Hot Lava">Saos Hot Lava</option>
                 </select>
             </div>
             
@@ -651,8 +643,6 @@
                 <select class="custom-select" id="chickenPart">
                     <option value="Dada">Dada</option>
                     <option value="Paha">Paha</option>
-                    <option value="Sayap">Sayap</option>
-                    <option value="Random" selected>Random</option>
                 </select>
             </div>
             
@@ -763,103 +753,257 @@
     <script>
         // Data menu dalam format array objek JavaScript - mudah diperluas
         const menuData = [
-            // Kategori Paket
+            // Kategori Paket Premium Sultan
             {
                 id: 1,
-                nama: "Paket Geprek Original",
-                kategori: "paket",
-                harga: 25000,
+                nama: "Ayam Geprek + Nasi + Sambal Mangga",
+                kategori: "paket_premium",
+                harga: 16000,
                 gambar: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Ayam geprek crispy + nasi + lalapan + kerupuk"
+                deskripsi: "Ayam geprek crispy dengan sambal mangga fresh"
             },
             {
                 id: 2,
-                nama: "Paket Geprek Keju",
-                kategori: "paket",
-                harga: 30000,
+                nama: "Ayam Geprek + Nasi + Sambal Kacang Mente",
+                kategori: "paket_premium",
+                harga: 16000,
                 gambar: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Ayam geprek + keju mozarella + nasi + lalapan"
+                deskripsi: "Ayam geprek dengan sambal kacang mente special"
             },
             {
                 id: 3,
-                nama: "Paket Geprek Jumbo",
-                kategori: "paket",
-                harga: 35000,
+                nama: "Ayam Geprek + Indomie",
+                kategori: "paket_premium",
+                harga: 17000,
                 gambar: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Ayam geprek jumbo + nasi + lalapan + kerupuk + es teh"
+                deskripsi: "Ayam geprek dengan indomie goreng/kuah"
             },
-            
-            // Kategori Makanan
             {
                 id: 4,
-                nama: "Ayam Geprek Original",
-                kategori: "makanan",
-                harga: 20000,
-                gambar: "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Ayam geprek crispy dengan sambal pilihan"
+                nama: "Ayam Geprek + Keju Moza + Nasi",
+                kategori: "paket_premium",
+                harga: 17000,
+                gambar: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek dengan keju mozarella meleleh"
             },
             {
                 id: 5,
-                nama: "Ayam Geprek Keju",
-                kategori: "makanan",
-                harga: 25000,
-                gambar: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Ayam geprek dengan taburan keju mozarella"
+                nama: "Ayam Geprek + Keju Cheddar + Nasi",
+                kategori: "paket_premium",
+                harga: 17000,
+                gambar: "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek dengan keju cheddar premium"
             },
             {
                 id: 6,
-                nama: "Nasi Putih",
-                kategori: "makanan",
-                harga: 5000,
-                gambar: "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Nasi putih hangat"
+                nama: "Ayam Geprek + Kentang Goreng",
+                kategori: "paket_premium",
+                harga: 20000,
+                gambar: "https://images.unsplash.com/photo-1594343431512-9fa6749bf90f?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek dengan kentang goreng crispy"
             },
             {
                 id: 7,
-                nama: "Lalapan",
-                kategori: "makanan",
-                harga: 3000,
-                gambar: "https://images.unsplash.com/photo-1594343431512-9fa6749bf90f?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Lalapan segar (timun, tomat, daun kemangi)"
+                nama: "Indomie Goreng + Telur",
+                kategori: "paket_premium",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Indomie goreng dengan telur ceplok"
             },
-            
-            // Kategori Minuman
             {
                 id: 8,
-                nama: "Es Teh Manis",
+                nama: "Indomie Kuah + Telur",
+                kategori: "paket_premium",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Indomie kuah hangat dengan telur"
+            },
+
+            // Kategori Paket Ekonomis
+            {
+                id: 9,
+                nama: "Ayam Geprek (tanpa nasi) + Sambal",
+                kategori: "paket_ekonomis",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1604503468506-a8da13d82791?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek crispy dengan sambal pilihan"
+            },
+            {
+                id: 10,
+                nama: "Ayam Geprek + Nasi + Sambal",
+                kategori: "paket_ekonomis",
+                harga: 12000,
+                gambar: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Paket lengkap ayam geprek dengan nasi"
+            },
+            {
+                id: 11,
+                nama: "Ayam Geprek + Nasi + Sambal Cobek",
+                kategori: "paket_ekonomis",
+                harga: 13000,
+                gambar: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek dengan sambal cobek pedas"
+            },
+            {
+                id: 12,
+                nama: "Ayam Geprek + Nasi + Sambal Korek",
+                kategori: "paket_ekonomis",
+                harga: 13000,
+                gambar: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek dengan sambal korek special"
+            },
+            {
+                id: 13,
+                nama: "Ayam Geprek + Nasi + Hot Lava + Cheese",
+                kategori: "paket_ekonomis",
+                harga: 15000,
+                gambar: "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam geprek dengan hot lava dan keju"
+            },
+            {
+                id: 14,
+                nama: "Ayam Tempong + Nasi + Sambal",
+                kategori: "paket_ekonomis",
+                harga: 12000,
+                gambar: "https://images.unsplash.com/photo-1594343431512-9fa6749bf90f?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Ayam tempong pedas dengan nasi"
+            },
+
+            // Kategori Cemilan
+            {
+                id: 15,
+                nama: "Bakso Bakar",
+                kategori: "cemilan",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Bakso bakar dengan bumbu special"
+            },
+            {
+                id: 16,
+                nama: "Kulit Ayam Krispy",
+                kategori: "cemilan",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Kulit ayam krispy gurih dan renyah"
+            },
+            {
+                id: 17,
+                nama: "Udang Rambutan",
+                kategori: "cemilan",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Udang crispy dengan bumbu rambutan"
+            },
+            {
+                id: 18,
+                nama: "Dimsum",
+                kategori: "cemilan",
+                harga: 6000,
+                gambar: "https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Dimsum kukus dengan saus spesial"
+            },
+            {
+                id: 19,
+                nama: "Chicken Nuggets",
+                kategori: "cemilan",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1562967914-608f82629710?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Nugget ayam crispy dengan saus"
+            },
+            {
+                id: 20,
+                nama: "Sosis Bakar (Hot Lava)",
+                kategori: "cemilan",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Sosis bakar dengan saus hot lava pedas"
+            },
+
+            // Kategori Minuman
+            {
+                id: 21,
+                nama: "Nutrisari",
+                kategori: "minuman",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Minuman serbuk vitamin C segar"
+            },
+            {
+                id: 22,
+                nama: "Pop Ice",
+                kategori: "minuman",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Minuman es serbuk aneka rasa"
+            },
+            {
+                id: 23,
+                nama: "Ice Tea",
                 kategori: "minuman",
                 harga: 5000,
                 gambar: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop&crop=center",
                 deskripsi: "Es teh manis segar"
             },
             {
-                id: 9,
-                nama: "Es Jeruk",
+                id: 24,
+                nama: "Lemon Tea",
+                kategori: "minuman",
+                harga: 5000,
+                gambar: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Teh lemon segar dan asam manis"
+            },
+            {
+                id: 25,
+                nama: "Thai Tea",
                 kategori: "minuman",
                 harga: 8000,
+                gambar: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Thai tea authentic dengan susu"
+            },
+            {
+                id: 26,
+                nama: "Matcha Tea",
+                kategori: "minuman",
+                harga: 8000,
+                gambar: "https://images.unsplash.com/photo-1569058242253-92a9c755a0ec?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Teh hijau matcha premium"
+            },
+            {
+                id: 27,
+                nama: "Brown Sugar Ice Coffee",
+                kategori: "minuman",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1594343431512-9fa6749bf90f?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Kopi es dengan brown sugar"
+            },
+            {
+                id: 28,
+                nama: "Salted Caramel Ice Coffee",
+                kategori: "minuman",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Kopi es dengan salted caramel"
+            },
+            {
+                id: 29,
+                nama: "Ice Capucino",
+                kategori: "minuman",
+                harga: 10000,
+                gambar: "https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?w=400&h=300&fit=crop&crop=center",
+                deskripsi: "Cappuccino dingin dengan foam"
+            },
+            {
+                id: 30,
+                nama: "Jeruk Peras",
+                kategori: "minuman",
+                harga: 5000,
                 gambar: "https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Es jeruk peras segar"
-            },
-            {
-                id: 10,
-                nama: "Air Mineral",
-                kategori: "minuman",
-                harga: 3000,
-                gambar: "https://images.unsplash.com/photo-1523362628745-0c100150b504?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Air mineral botol 600ml"
-            },
-            {
-                id: 11,
-                nama: "Es Kelapa Muda",
-                kategori: "minuman",
-                harga: 12000,
-                gambar: "https://images.unsplash.com/photo-1605693104473-d0c01f7d3b51?w=400&h=300&fit=crop&crop=center",
-                deskripsi: "Es kelapa muda segar dengan daging kelapa"
+                deskripsi: "Jeruk peras segar alami"
             }
         ];
 
         // Variabel global untuk keranjang dan customization
-        let cart = JSON.parse(localStorage.getItem('ayamGeprekCart')) || [];
+        let cart = JSON.parse(localStorage.getItem('geprekOrangeCart')) || [];
         let currentItem = null;
         let currentQuantity = 1;
 
@@ -896,11 +1040,21 @@
             document.getElementById('customizationTitle').textContent = currentItem.nama;
             document.getElementById('itemQuantity').textContent = currentQuantity;
             
-            // Tampilkan/sembunyikan kontrol bagian ayam hanya untuk menu ayam
+            // Tampilkan/sembunyikan kontrol sambal
+            const sambalGroup = document.getElementById('sambalGroup');
             const chickenPartGroup = document.getElementById('chickenPartGroup');
-            if (currentItem.nama.toLowerCase().includes('ayam') && currentItem.kategori !== 'minuman') {
+            
+            // Minuman tidak ada pilihan sambal atau bagian ayam
+            if (currentItem.kategori === 'minuman') {
+                sambalGroup.style.display = 'none';
+                chickenPartGroup.style.display = 'none';
+            } else if (currentItem.nama.toLowerCase().includes('ayam geprek') || currentItem.nama.toLowerCase().includes('ayam tempong')) {
+                // Menu ayam ada pilihan sambal dan bagian ayam
+                sambalGroup.style.display = 'block';
                 chickenPartGroup.style.display = 'block';
             } else {
+                // Menu lain hanya ada pilihan sambal (jika relevan)
+                sambalGroup.style.display = currentItem.kategori === 'cemilan' ? 'none' : 'block';
                 chickenPartGroup.style.display = 'none';
             }
             
@@ -929,7 +1083,6 @@
 
         // Fungsi untuk menambah ke keranjang dengan customization
         function addToCartWithCustomization() {
-            const spiceLevel = document.getElementById('spiceLevel').value;
             const sambalType = document.getElementById('sambalType').value;
             const chickenPart = document.getElementById('chickenPart').value;
             
@@ -939,9 +1092,8 @@
                 nama: currentItem.nama,
                 harga: currentItem.harga,
                 quantity: currentQuantity,
-                spiceLevel: spiceLevel,
-                sambalType: sambalType,
-                chickenPart: currentItem.nama.toLowerCase().includes('ayam') && currentItem.kategori !== 'minuman' ? chickenPart : null
+                sambalType: currentItem.kategori !== 'minuman' && currentItem.kategori !== 'cemilan' ? sambalType : null,
+                chickenPart: (currentItem.nama.toLowerCase().includes('ayam geprek') || currentItem.nama.toLowerCase().includes('ayam tempong')) ? chickenPart : null
             };
 
             cart.push(cartItem);
@@ -955,7 +1107,7 @@
 
         // Fungsi untuk update storage keranjang
         function updateCartStorage() {
-            localStorage.setItem('ayamGeprekCart', JSON.stringify(cart));
+            localStorage.setItem('geprekOrangeCart', JSON.stringify(cart));
         }
 
         // Fungsi untuk update badge keranjang
@@ -995,7 +1147,6 @@
             
             cartItemsContainer.innerHTML = cart.map(item => {
                 const details = [];
-                if (item.spiceLevel) details.push(`Level: ${item.spiceLevel}`);
                 if (item.sambalType) details.push(`Sambal: ${item.sambalType}`);
                 if (item.chickenPart) details.push(`Bagian: ${item.chickenPart}`);
                 
@@ -1076,7 +1227,7 @@
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                background: #4ECDC4;
+                background: #FF8C42;
                 color: white;
                 padding: 15px 20px;
                 border-radius: 10px;
@@ -1120,14 +1271,13 @@
                 const orderNotes = document.getElementById('orderNotes').value;
                 
                 // Generate pesan WhatsApp
-                let message = `*PESANAN AYAM GEPREK MANTUL*\n\n`;
+                let message = `*PESANAN GEPREK ORANGE*\n\n`;
                 message += `*Nama:* ${customerName}\n`;
                 message += `*Jam Pengambilan:* ${pickupTime}\n\n`;
                 message += `*DETAIL PESANAN:*\n`;
                 
                 cart.forEach((item, index) => {
                     message += `${index + 1}. ${item.nama} (${item.quantity}x)\n`;
-                    if (item.spiceLevel) message += `   Level: ${item.spiceLevel}\n`;
                     if (item.sambalType) message += `   Sambal: ${item.sambalType}\n`;
                     if (item.chickenPart) message += `   Bagian: ${item.chickenPart}\n`;
                     message += `   Harga: Rp ${formatRupiah(item.harga * item.quantity)}\n\n`;
@@ -1140,7 +1290,7 @@
                     message += `*Catatan:* ${orderNotes}\n\n`;
                 }
                 
-                message += `Terima kasih telah memesan di Ayam Geprek Mantul! 🔥`;
+                message += `Terima kasih telah memesan di Geprek Orange! 🍊\nGeprek Gurih, Pedasnya Bikin Nagih!`;
                 
                 // Encode pesan untuk URL WhatsApp
                 const encodedMessage = encodeURIComponent(message);
@@ -1162,4 +1312,4 @@
         });
     </script>
 </body>
-</html>
+                    </html>
